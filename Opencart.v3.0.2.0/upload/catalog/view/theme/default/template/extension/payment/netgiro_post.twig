@@ -1,0 +1,26 @@
+<iframe id="payment_iframe" name="payment_iframe" width="100%" height="825px" frameBorder="0" style="display:none; margin-left:0%;"></iframe>
+
+{% if error %}
+<div class="alert alert-info">{{ error }}</div>
+{% endif %}
+{% if testmode %}
+<div class="alert alert-info">{{ text_testmode }}</div>
+{% endif %}
+<form action="{{ action }}" method="post" id="checkout-form" target="payment_iframe">
+  {% for key,value in fields %}
+    <input type="hidden" name="{{ key }}" value="{{ value }}" />
+  {% endfor %}
+  <div class="buttons">
+    <div class="pull-right">
+      <input type="submit" value="{{ button_continue }} eða {{ button_confirm }}" id="button-confirm" data-loading-text="{{ text_loading }}" class="btn btn-primary" />
+    </div>
+  </div>
+</form>
+
+<script type="text/javascript"><!--
+$('#button-confirm').bind('click', function() {
+	$('#payment_iframe').slideDown();
+	$('#button-confirm').hide();
+	$('#checkout-form').submit();
+});
+//--></script>

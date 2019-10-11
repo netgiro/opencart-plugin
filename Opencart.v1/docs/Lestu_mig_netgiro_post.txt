@@ -1,0 +1,47 @@
+===============================================
+   OPENCART 1.x NETGIRO IFRAME POST PAYMENT EXTENSION
+===============================================
+
+
+Supported OpenCart Versions:
+================
+All v1.4.x & 1.5.x versions
+
+
+What does it do:
+================
+This contrib adds support for Netgiro.is POST IFRAME payment integration
+Instead of redirecting customers to an external site, customers are shown the secure payment form inside of an iframe right on your store's checkout page.
+The customer never leaves and likely won't even realize he was using an iframe because it is seamless integrated into the site.
+After payment, customer is then shown to your cart success page as normal.
+
+
+Requirements:
+==============
+  * You will of course need to have a gateway account.
+
+
+Main features:
+==============
+  * PA-DSS Compliant as no sensitive data is stored on your site
+  * Loads seamlessly onsite via iFrame to keep customer on your site during payment
+  * No need for private SSL. However, some browsers will throw warning about having secure info in an iframe after the payment is already made. So it won't affect the sale.
+  * No files overwritten
+  * Customers stay Onsite using a secure iFrame for payment
+  * Debug Logging (logs debug info to your system error log for troubleshooting)
+  * Full support of error handling.
+
+
+How to install it:
+==================
+1) Unzip and upload the "admin" and/or "catalog" folders to the root directory of your OpenCart installation.
+- No files are overwritten
+2) From the admin menu, go to 'Admin->Users->User Groups'. Edit Top Administrator
+3) Find and check the entries for any unchecked files in both modify and access. save.
+4) From the admin menu, go to 'Extensions->Payment'.
+5) Install the new module, and click edit to configure.
+6) For other languages, clone the languages file to your language
+	admin/language/english/payment/netgiro_post.php
+	catalog/language/english/payment/netgiro_post.php
+
+
